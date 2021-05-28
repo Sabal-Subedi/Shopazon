@@ -38,7 +38,7 @@ function Login() {
       <Link to="/">
         <img
           className="login__logo"
-          src="https://lh3.googleusercontent.com/proxy/vElaJY98eR9X198l6ZhSxa8hewmnykZkpLooCvSix8ml7HJBn72hhrIdavuu5MZfFnE2C5YVeza0xH7PGkA3YuSyz7DTrfLrTcDNQL6PAExxxb-2sL7yIoCn293d1crn4yuTL7NtHFJjCnbk7g"
+          src="https://www.bgr.in/wp-content/uploads/2013/06/amazonIN_logo.jpg"
         />
       </Link>
       <div className="login__container">

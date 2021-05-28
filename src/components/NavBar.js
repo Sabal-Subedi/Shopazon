@@ -3,9 +3,17 @@ import SearchIcon from '@material-ui/icons/Search';
 import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
 import { Link } from 'react-router-dom';
 import { useStateValue } from '../context/BasketContext';
+import { auth } from '../firebase';
 
 const NavBar = () => {
-    const [{basket}, dispatch] = useStateValue();
+    const [{ basket, user }, dispatch] = useStateValue();
+
+    const authenticateHandler = () => {
+        if (user) {
+            auth.signOut();
+        }
+    }
+
     return (
         <div className="navbar">
             <Link to="/">
@@ -21,10 +29,10 @@ const NavBar = () => {
             </div>
             
             <div className="navbar__nav">
-                <Link to="/login">
-                    <div className="navbar__option">
-                        <span className="navbar__optionLineOne">Hello Guest</span>
-                        <span className="navbar__optionLineTwo">Signin</span>
+                <Link to={!user && "/login"}>
+                    <div onClick={authenticateHandler} className="navbar__option">
+                        <span className="navbar__optionLineOne">Hello {user ?user.email:"Guest"}</span>
+                        <span className="navbar__optionLineTwo">{user ?"Sign Out":"Sign In"}</span>
                     </div>
                 </Link>
                 <div className="navbar__option">

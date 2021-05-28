@@ -4,8 +4,35 @@ import NavBar from './components/NavBar';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 import Checkout from './components/Checkout';
 import Login from './components/Login';
+import { auth } from './firebase';
+import { useEffect } from 'react';
+import { useStateValue } from './context/BasketContext';
 
 function App() {
+
+  const [{}, dispatch] = useStateValue();
+  useEffect(() => {
+    auth.onAuthStateChanged(authUser => {
+      console.log("user >>>",authUser);
+
+      if (authUser) {
+        //user logged in
+        dispatch({
+          type: "SET_USER",
+          user: authUser,
+        })
+      } else {
+        //user logged out
+        dispatch({
+          type: "SET_USER",
+          user: null,
+        })
+      }
+    })
+    
+  }, []);
+
+
   return (
     
     <div className="app">

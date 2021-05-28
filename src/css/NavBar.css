@@ -15,19 +15,17 @@
   object-fit: contain;
   margin: 0 20px;
 }
-
 .navbar__searchInput {
-  padding: 10px;
-  height: 12px;
-  border: none;
-  width: 500px;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
+  height: 22px;
+  width: 80%;
 }
 .navbar__search {
   display: flex;
-  flex: 1;
+  width: 80%;
   align-items: center;
   border-radius: 25px;
+  margin-right: 10px;
 }
 
 .navbar__searchIcon {
