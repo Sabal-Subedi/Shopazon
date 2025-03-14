@@ -33,3 +33,8 @@ Shopazon is a full-stack e-commerce platform that replicates the shopping experi
 
 ### 📌 Installation  
 - 1️⃣ Clone the repository [Click here](https://github.com/Sabal-Subedi/Shopazon.git)
+- 2️⃣ Navigate to the project directory
+- 3️⃣ Install dependencies
+  - npm install
+- 4️⃣ Run the development server
+- 5️⃣ Open the app in your browser [Click here](http://localhost:3000)
